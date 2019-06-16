@@ -1,6 +1,6 @@
-#distributed key-value & config store
+# distributed key-value & config store
 
-##motivation
+## motivation
 
 Bir uygulama, ayağa kalkar iken hepinizin bildiği üzere mutlaka bir konfigurasyon dosyasını 
 baz alır. Bu dosya ise o uygulama için tüm değişken,hassas ve gizli olmasını beklediğimiz verileri içerir.
@@ -8,12 +8,12 @@ baz alır. Bu dosya ise o uygulama için tüm değişken,hassas ve gizli olması
 Hashicorp'un vault ürünün kullanarak dotnet core uygulamamızı distributed,concurrent bir şekilde tüm konfig bilgilerinden 
 nasıl arındırdığımızı inceleyeceğiz.
 
-###ttl
+### ttl
 
-###key versioning
+### key versioning
 
-###service discovery 
+### service discovery 
 
-##how it works
+## how it works
 
-##references 
+## references 
