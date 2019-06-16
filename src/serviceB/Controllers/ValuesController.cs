@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using kvstore;
 using Microsoft.AspNetCore.Mvc;
 
 namespace serviceB.Controllers
@@ -10,36 +8,25 @@ namespace serviceB.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private readonly IConfigurationReaderClient _configurationReaderClient;
+
+        public ValuesController(IConfigurationReaderClient configurationReaderClient)
+        {
+            _configurationReaderClient = configurationReaderClient;
+        }
+
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public async Task<ActionResult> Get()
         {
-            return new string[] { "value1", "value2" };
+            return Ok(await _configurationReaderClient.GetAllValues());
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        // GET api/values/is-basket-enabled/${IS_BASKET_ENABLED}
+        [HttpGet("is-basket-enabled/{key}")]
+        public async Task<ActionResult> GetIsBasketEnabled(string key)
         {
-            return "value";
-        }
-
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            return Ok(await _configurationReaderClient.GetValue(key));
         }
     }
 }

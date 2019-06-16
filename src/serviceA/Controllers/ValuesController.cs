@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Threading.Tasks;
+using kvstore;
 using Microsoft.AspNetCore.Mvc;
 
 namespace serviceA.Controllers
@@ -7,36 +8,32 @@ namespace serviceA.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private readonly IConfigurationReaderClient _configurationReaderClient;
+
+        public ValuesController(IConfigurationReaderClient configurationReaderClient)
+        {
+            _configurationReaderClient = configurationReaderClient;
+        }
+
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public async Task<ActionResult> Get()
         {
-            return new string[] { "value1", "value2" };
+            return Ok(await _configurationReaderClient.GetAllValues());
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        // GET api/values/site-name/${SITE_NAME}
+        [HttpGet("site-name/{key}")]
+        public async Task<ActionResult> GetSiteName(string key)
         {
-            return "value";
+            return Ok(await _configurationReaderClient.GetValue(key));
         }
 
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody] string value)
+        // GET api/values/max-item-count/${MAX_ITEM_COUNT}
+        [HttpGet("max-item-count/{key}")]
+        public async Task<ActionResult> GetMaxItemCount(string key)
         {
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            return Ok(await _configurationReaderClient.GetValue(key));
         }
     }
 }
