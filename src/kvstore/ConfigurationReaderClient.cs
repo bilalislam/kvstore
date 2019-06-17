@@ -1,3 +1,4 @@
+using System;
 using VaultSharp;
 using System.Linq;
 using System.Threading.Tasks;
@@ -18,14 +19,40 @@ namespace kvstore
 
         public async Task<object> GetValue(string key)
         {
-            var application = await _vaultClient.V1.Secrets.KeyValue.V2.ReadSecretAsync(_applicationName);
-            return application.Data.Data[key];
+            try
+            {
+                var application = await _vaultClient.V1.Secrets.KeyValue.V2.ReadSecretAsync(_applicationName);
+                return application.Data.Data[key];
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
         }
 
         public async Task<List<object>> GetAllValues()
         {
-            var application = await _vaultClient.V1.Secrets.KeyValue.V2.ReadSecretAsync(_applicationName);
-            return application.Data.Data.Values.ToList();
+            try
+            {
+                var application = await _vaultClient.V1.Secrets.KeyValue.V2.ReadSecretAsync(_applicationName);
+                return application.Data.Data.Values.ToList();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
+        public async Task SetValue(Dictionary<string, object> secrets)
+        {
+            try
+            {
+                await _vaultClient.V1.Secrets.KeyValue.V2.WriteSecretAsync(_applicationName, secrets);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
         }
     }
 }

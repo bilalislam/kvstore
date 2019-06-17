@@ -1,6 +1,7 @@
 using VaultSharp;
 using VaultSharp.V1.AuthMethods;
 using VaultSharp.V1.AuthMethods.Token;
+using VaultSharp.V1.SystemBackend;
 
 namespace kvstore
 {
@@ -17,7 +18,15 @@ namespace kvstore
         {
             IAuthMethodInfo authMethod = new TokenAuthMethodInfo(_options.TokenId);
             var vaultClientSettings = new VaultClientSettings(_options.Server, authMethod);
-            return new VaultClient(vaultClientSettings);
+            var client = new VaultClient(vaultClientSettings);
+
+            client.V1.System.WritePolicyAsync(new Policy
+            {
+                Name = "kvstore-policy",
+                Rules = "path \"kv/*\" {  policy = \"write\" }"
+            });
+
+            return client;
         }
     }
 }

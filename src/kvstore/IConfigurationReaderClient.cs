@@ -7,5 +7,6 @@ namespace kvstore
     {
         Task<object> GetValue(string key);
         Task<List<object>> GetAllValues();
+        Task SetValue(Dictionary<string, object> secrets);        
     }
 }
