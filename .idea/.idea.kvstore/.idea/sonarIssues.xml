@@ -3,6 +3,41 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="$PROJECT_DIR$/deploy/docker-compose.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/docker/ServiceB/Dockerfile">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/docker/ServiceB/build.sh">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/docker/ServiceB/setup.sh">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/docker/serviceA/Dockerfile">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/docker/serviceA/build.sh">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/docker/serviceA/setup.sh">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/kvstore/ConfigurationReaderClient.cs">
           <value>
             <set />
@@ -18,6 +53,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/kvstore/kvstore.csproj">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/serviceA/Controllers/ValuesController.cs">
           <value>
             <set />
@@ -29,6 +69,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/serviceA/appsettings.Development.json">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/serviceA/appsettings.docker.json">
           <value>
             <set />
           </value>
@@ -53,7 +98,52 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/serviceB/appsettings.docker.json">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/serviceB/serviceB.csproj">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../wwwroot/mobil.arakatman.digiturkplayint.all/Digiturk.PlayInt.Middleware.Services.Impl/ContentService.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../wwwroot/tvguideworker/src/worker/Controllers/HealthCheckController.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../wwwroot/tvguideworker/src/worker/Web.Active.config">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../wwwroot/tvguideworker/src/worker/Web.Test.config">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../wwwroot/tvguideworker/src/worker/Web.config">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../wwwroot/tvguideworker/src/worker/Web1.config">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../wwwroot/tvguideworker/src/worker/publish-rls/Web.Test.config">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../wwwroot/tvguideworker/src/worker/worker.csproj">
           <value>
             <set />
           </value>
