@@ -32,7 +32,7 @@ $ sh build.sh
 ## How to setup via docker compose:
 
 ```sh
-$ cd /deploy/docker-compose
+$ cd /deploy
 $ docker-compose up
 ```
 For stop all containers
