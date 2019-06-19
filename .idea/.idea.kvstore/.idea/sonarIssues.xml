@@ -108,6 +108,36 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/test/kvstore.tests/ApplicationSettings.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/test/kvstore.tests/KvStore.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/test/kvstore.tests/TestBase.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/test/kvstore.tests/appsettings.docker.json">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/test/kvstore.tests/appsettings.json">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/test/kvstore.tests/kvstore.tests.csproj">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../wwwroot/mobil.arakatman.digiturkplayint.all/Digiturk.PlayInt.Middleware.Services.Impl/ContentService.cs">
           <value>
             <set />

@@ -3,6 +3,7 @@ using VaultSharp;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using VaultSharp.V1.SystemBackend;
 
 namespace kvstore
 {
@@ -53,6 +54,11 @@ namespace kvstore
             {
                 throw new Exception(e.Message);
             }
+        }
+
+        public async Task<HealthStatus> GetStatus()
+        {
+            return await _vaultClient.V1.System.GetHealthStatusAsync();
         }
     }
 }
