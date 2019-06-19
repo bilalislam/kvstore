@@ -6,7 +6,6 @@ using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 
 namespace kvstore.tests
 {
-    [TestClass]
     public class KvStore : TestBase
     {
         private readonly IConfigurationReaderClient _client;
@@ -16,19 +15,34 @@ namespace kvstore.tests
             _client = BuildServiceProvider().GetService<IConfigurationReaderClient>();
         }
 
-        [TestMethod]
+        [Fact]
         public void Should_Be_Alive()
         {
             var status = _client.GetStatus().Result.Initialized;
             Assert.IsTrue(status);
         }
 
-        [TestMethod]
-        [InlineData("site-name")]
-        [InlineData("max-item-count")]
-        public void Should_Be_Get_Given_Any_Value_of_Key_For_Service_A(string key, object value)
+        [Fact]
+        public void Should_Be_Get_Given_Any_Value_of_Key_For_Service_A()
         {
-            var status = _client.SetValue(new Dictionary<string, object>());
+            //Arrange
+            _client.SetValue(new Dictionary<string, object>
+            {
+                {"site-name", "google.com.tr"},
+                {"max-item-count", 50}
+            }).Wait();
+
+
+            //Act
+            var siteName = _client.GetValue("site-name").Result;
+            var maxItemCount = _client.GetValue("max-item-count").Result;
+
+            //Assert
+            Assert.AreEqual(siteName, "google.com.tr");
+            Assert.AreEqual(maxItemCount, 50);
         }
+
+
+        //kvstore policy checking
     }
 }

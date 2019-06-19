@@ -10,14 +10,12 @@ namespace kvstore.tests
         {
             var builder = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json", true, true)
-                .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}.json")
-                    .AddEnvironmentVariables();
+                .AddEnvironmentVariables();
 
             var configuration = builder.Build();
             var services = new ServiceCollection();
 
-            services.AddKvStore(configuration);
-            services.Configure<KvOptions>(configuration.GetSection("KvOptions"));
+            services.AddKvStore(configuration);          
 
             return services.BuildServiceProvider();
         }
