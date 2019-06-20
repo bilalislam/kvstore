@@ -15,19 +15,6 @@ The container will attempt to lock memory to prevent sensitive values from being
 
 Note the --cap-add=IPC_LOCK: this is required in order for Vault to lock memory, which prevents it from being swapped to disk. 
 
-## How to build for service-a
-
-```sh
-$ cd /docker/serviceA/
-$ sh build.sh
-```
-
-## How to build for service-b
-
-```sh
-$ cd /docker/serviceB/
-$ sh build.sh
-```
 
 ## How to setup via docker compose:
 

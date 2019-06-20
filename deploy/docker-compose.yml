@@ -2,27 +2,27 @@ version: '3.4'
 
 services:
   service-a:
-    image: service-a:latest
+    image: ninjafx/service-a:latest
     deploy:
       replicas: 1
       restart_policy:
         condition: on-failure
     ports:
       - "5000:5000"
-    depends_on:      
+    depends_on:
       - vault
 
   service-b:
-    image: service-b:latest
+    image: ninjafx/service-b:latest
     deploy:
       replicas: 1
       restart_policy:
         condition: on-failure
     ports:
-      - "5001:5001"  
+      - "5001:5001"
     depends_on:
       - vault
-      
+
   vault:
     image: vault
     cap_add:
@@ -31,6 +31,6 @@ services:
       VAULT_DEV_ROOT_TOKEN_ID: my-root
       VAULT_LOG: 'debug'
       SKIP_SETCAP: 'true'
-    ports:      
+    ports:
       - "8200:8200"
   
