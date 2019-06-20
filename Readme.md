@@ -37,7 +37,7 @@ coming soon ...
 coming soon ...
 
 ## road map
-1. kvstore exception handling as lambda evaluation so not try-catch using per each method
+1. use ttl for all keys also to be able enable or disable
 2. use vault db
 3. vault cluster management
 
