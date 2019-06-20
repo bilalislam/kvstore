@@ -3,6 +3,11 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="/Dummy.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/deploy/docker-compose.yml">
           <value>
             <set />
@@ -138,6 +143,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../wwwroot/mobil.arakatman.digiturkplayint.all/Digiturk.PlayInt.Middleware.Services.Cached.Impl/CachedContentService.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../wwwroot/mobil.arakatman.digiturkplayint.all/Digiturk.PlayInt.Middleware.Services.Impl/ContentService.cs">
           <value>
             <set />
@@ -164,6 +174,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../../wwwroot/tvguideworker/src/worker/Web1.config">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../wwwroot/tvguideworker/src/worker/appsettings.Development.json">
           <value>
             <set />
           </value>

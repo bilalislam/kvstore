@@ -1,6 +1,6 @@
+using System;
 using System.Collections.Generic;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Xunit;
 using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 
@@ -39,7 +39,7 @@ namespace kvstore.tests
 
             //Assert
             Assert.AreEqual(siteName, "google.com.tr");
-            Assert.AreEqual(maxItemCount, 50);
+            Assert.AreEqual(maxItemCount, (Int64) 50);            
         }
 
 

@@ -1,4 +1,3 @@
-using System;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -15,6 +14,7 @@ namespace kvstore.tests
             var configuration = builder.Build();
             var services = new ServiceCollection();
 
+            services.AddOptions();
             services.AddKvStore(configuration);          
 
             return services.BuildServiceProvider();
