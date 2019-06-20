@@ -39,10 +39,15 @@ namespace kvstore.tests
 
             //Assert
             Assert.AreEqual(siteName, "google.com.tr");
-            Assert.AreEqual(maxItemCount, (Int64) 50);            
+            Assert.AreEqual(maxItemCount, (Int64) 50);
         }
 
-
-        //kvstore policy checking
+        [Theory]
+        [InlineData("kvstore-policy")]
+        public void Policy_Check(string policyName)
+        {
+            var policy = _client.GetPolicy(policyName).Result.Data.Name;
+            Assert.AreEqual(policy, "kvstore-policy");
+        }
     }
 }
