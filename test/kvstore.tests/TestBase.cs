@@ -15,7 +15,7 @@ namespace kvstore.tests
             var services = new ServiceCollection();
 
             services.AddOptions();
-            services.AddKvStore(configuration);          
+            services.AddKvStore(configuration);
 
             return services.BuildServiceProvider();
         }

@@ -23,7 +23,7 @@ namespace kvstore.tests
         }
 
         [Fact]
-        public void Should_Be_Get_Given_Any_Value_of_Key_For_Service_A()
+        public void Should_Be_Get_Given_Any_Value_of_Key_For_Service()
         {
             //Arrange
             _client.SetValue(new Dictionary<string, object>
@@ -38,8 +38,8 @@ namespace kvstore.tests
             var maxItemCount = _client.GetValue("max-item-count").Result;
 
             //Assert
-            Assert.AreEqual(siteName, "google.com.tr");
-            Assert.AreEqual(maxItemCount, (Int64) 50);
+            Assert.AreEqual("google.com.tr", siteName);
+            Assert.AreEqual((Int64) 50, maxItemCount);
         }
 
         [Theory]
