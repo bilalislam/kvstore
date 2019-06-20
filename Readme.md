@@ -26,6 +26,10 @@ For stop all containers
 ```sh
 $ docker-compose down
 ```
+## Ports
+    1. config store : 8200
+    2. service-a : 5000/swagger
+    3. service-b : 5001/swagger
 
 ## TTL 
 coming soon ...
