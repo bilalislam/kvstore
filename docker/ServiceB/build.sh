@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Define image name and version
+NAME_SPACE=ninjafx
 IMAGE_NAME=service-b
 VERSION=latest
 
@@ -31,10 +32,10 @@ rm -rf ../../src/serviceB/obj/Docker
 docker build -f Dockerfile -t "$IMAGE_NAME:$VERSION" .
 
 # Tag this version as latest
-#docker tag $IMAGE_NAME $NAME_SPACE/$IMAGE_NAME:$VERSION
+docker tag $IMAGE_NAME $NAME_SPACE/$IMAGE_NAME:$VERSION
 
 # Push docker image as latest
-#docker push "$NAME_SPACE/$IMAGE_NAME:$VERSION"
+docker push "$NAME_SPACE/$IMAGE_NAME:$VERSION"
 
 # Remove built jar file
 rm -rf app
