@@ -21,6 +21,8 @@ If any key persists in config file , when hackers get in the server and they can
 
 ## how it works
 
+Notes : Vault server token given as temporary . Normally must give password per app.
+
 ## How to setup via docker compose:
 
 ```sh
